@@ -94,8 +94,9 @@ If you'd like to contribute an integration, see [Contributing integrations](/doc
 if __name__ == "__main__":
     DOCS_DIR = Path(__file__).parents[1]
     input_dir = DOCS_DIR / "docs" / "integrations" / "providers"
-    output_dir = DOCS_DIR / Path(sys.argv[1]) / "integrations" / "providers" / "all"
-    output_file = output_dir / "index.mdx"
+    output_dir = DOCS_DIR / Path(sys.argv[1]) / "integrations" / "providers"
+    # "index.mdx" is used for `providers` root directory menu
+    output_file = output_dir / "all.mdx"
 
     titles = extract_titles(input_dir)
     links = transform_to_links(titles=titles, prefix="/docs/integrations/providers/")
