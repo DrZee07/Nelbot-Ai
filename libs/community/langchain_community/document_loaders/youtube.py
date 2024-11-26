@@ -319,7 +319,13 @@ class YoutubeLoader(BaseLoader):
                 'Could not import "pytube" Python package. '
                 "Please install it with `pip install pytube`."
             )
-        yt = YouTube(f"https://www.youtube.com/watch?v={self.video_id}")
+        yt_url = f"https://www.youtube.com/watch?v={self.video_id}"    
+        yt = YouTube(
+             yt_url,
+             use_oauth=True,
+             allow_oauth_cache=True
+            
+            )
         video_info = {
             "title": yt.title or "Unknown",
             "description": yt.description or "Unknown",
