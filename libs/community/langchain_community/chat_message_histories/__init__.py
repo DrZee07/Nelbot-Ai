@@ -1,6 +1,5 @@
 """**Chat message history** stores a history of the message interactions in a chat.
 
-
 **Class hierarchy:**
 
 .. code-block::
@@ -33,6 +32,9 @@ if TYPE_CHECKING:
     )
     from langchain_community.chat_message_histories.elasticsearch import (
         ElasticsearchChatMessageHistory,
+    )
+    from langchain_community.chat_message_histories.falkordb import (
+        FalkorDBChatMessageHistory,
     )
     from langchain_community.chat_message_histories.file import (
         FileChatMessageHistory,
@@ -98,6 +100,7 @@ __all__ = [
     "ElasticsearchChatMessageHistory",
     "FileChatMessageHistory",
     "FirestoreChatMessageHistory",
+    "FalkorDBChatMessageHistory",
     "MomentoChatMessageHistory",
     "MongoDBChatMessageHistory",
     "Neo4jChatMessageHistory",
@@ -124,6 +127,7 @@ _module_lookup = {
     "ElasticsearchChatMessageHistory": "langchain_community.chat_message_histories.elasticsearch",  # noqa: E501
     "FileChatMessageHistory": "langchain_community.chat_message_histories.file",
     "FirestoreChatMessageHistory": "langchain_community.chat_message_histories.firestore",  # noqa: E501
+    "FalkorDBChatMessageHistory": "langchain_community.chat_message_histories.falkordb",
     "MomentoChatMessageHistory": "langchain_community.chat_message_histories.momento",
     "MongoDBChatMessageHistory": "langchain_community.chat_message_histories.mongodb",
     "Neo4jChatMessageHistory": "langchain_community.chat_message_histories.neo4j",
